@@ -71,6 +71,17 @@ class Graph:
                     path.append(i)
                     visited[i] = True
 
+    def DFS(self, start, visited):
+         
+        print(start, end = ' ')
+ 
+        visited[start] = True
+ 
+        for i in range(self.__size):
+             
+            if (self.matrix[start][i] == 1 and
+                    visited[i] == False):
+                self.DFS(i, visited)
 
         
 
@@ -85,14 +96,11 @@ def main():
     matrix01.display()
     matrix01.BFS(0)
     print("\n")
-    matrix01.BFS(1)
-    print("\n")
-    matrix01.BFS(2)
-    print("\n")
-    matrix01.BFS(3)
-    print("\n")
-    matrix01.BFS(4)
+    
 
+    visited = [False] * 5
+    matrix01.DFS(0, visited)
+    
     
 
 if __name__ == '__main__':
