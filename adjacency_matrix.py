@@ -87,18 +87,26 @@ class Graph:
 
 def main():
 
-    matrix01 = Graph(5)
+    matrix01 = Graph(10)
     matrix01.add_edge(0, 1)
-    matrix01.add_edge(0, 2)
-    matrix01.add_edge(0, 3)
-    matrix01.add_edge(1, 3)
-    matrix01.add_edge(2, 4)
+    matrix01.add_edge(0, 9)
+    matrix01.add_edge(1, 2)
+    matrix01.add_edge(2, 3)
+    matrix01.add_edge(3, 4)
+    matrix01.add_edge(4, 5)
+    matrix01.add_edge(5, 6)
+    matrix01.add_edge(6, 7)
+    matrix01.add_edge(7, 8)
+    matrix01.add_edge(8, 9)
+   
     matrix01.display()
+
+    print("Breadth first search on 10 x 10 matrix: ")
     matrix01.BFS(0)
     print("\n")
     
-
-    visited = [False] * 5
+    print("Depth first search on 10 x 10 matrix: ")
+    visited = [False] * 10
     matrix01.DFS(0, visited)
     
     
